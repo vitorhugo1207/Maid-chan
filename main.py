@@ -41,4 +41,4 @@ async def say(ctx,*,said):
   await ctx.send(said)
   await ctx.message.delete()
 
-Maidchan.run('ODY1NjU3MDMzODY4MDUwNDMy.YPHL8A.Jz_HCn9JbzgHPGHbJkMVE2ivZiQ')
+Maidchan.run('token')
