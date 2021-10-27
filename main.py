@@ -13,11 +13,13 @@ from math import sqrt
 from dice.dice import *
 
 
-with open('config.json') as e:
-  infos = json.load(e)
+with open('config.json') as r:
+  infos = json.load(r)
   prefix = infos['prefix']
-  
+  token = infos['token']
+
 Maidchan = commands.Bot(command_prefix=prefix, case_insensitive=True, intents=discord.Intents.all())
+
 
 @Maidchan.event
 async def on_ready():
@@ -33,12 +35,13 @@ async def math(ctx, *, calc):
 
 @Maidchan.command()
 async def dice(ctx, *, dice):
-  diceImport = diceMain(dice).diceRoll
-  # print(diceImport)
+  diceImport = diceMain(dice)
+  diceImport.diceRoll()
+  await ctx.send(diceImport.rollTotal)
 
 @Maidchan.command()
 async def say(ctx,*,said):
   await ctx.send(said)
   await ctx.message.delete()
 
-Maidchan.run('token')
+Maidchan.run(token)

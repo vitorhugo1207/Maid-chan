@@ -93,7 +93,7 @@ class diceMain():
     def dataShow(self):
         '''Data show'''
         pass
-    
+
     def diceRoll(self):
         self.getScrollTimes()
         self.bonus()
