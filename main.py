@@ -13,8 +13,10 @@ from discord.ext import *
 from discord.ext.commands import *
 from math import sqrt
 from dice.dice import *
-import aiofiles
+# import aiofiles
 import discord.client
+import requests
+import random
 
 with open('config.json') as r:
   infos = json.load(r)
@@ -53,6 +55,27 @@ async def avatar(ctx,*,user:discord.Member=None):
     user = ctx.author
   urlAvatarUser = user.avatar_url
   await ctx.send(urlAvatarUser)
+
+@Maidchan.command()
+async def anime(ctx,*,category=None):
+  if category == None:
+    category = random.choice(['waifu','neko','shinobu','megumin','bully','cuddle','cry','hug','awoo','kiss','lick','pat','smug','bonk','yeet','blush','smile','wave','highfive','handhold','nom','bite','glomp','slap','kill','kick','happy','wink','poke','dance','cringe'])
+    print(category)
+  r = requests.get(f'https://api.waifu.pics/sfw/{category}')
+  r.encoding = 'ISO-8859-1'
+  r = str(r.text)
+  r = json.loads(str(r))
+  await ctx.send(r['url'])
+
+@Maidchan.command()
+async def hentai(ctx,*,category=None):
+  if category == None:
+    category = random.choice(['waifu','neko','trap','blowjob'])
+  r = requests.get(f'https://api.waifu.pics/nsfw/{category}')
+  r.encoding = 'ISO-8859-1'
+  r = str(r.text)
+  r = json.loads(str(r))
+  await ctx.send(r['url'])
 
 # @Maidchan.command()
 # async def test(ctx):
