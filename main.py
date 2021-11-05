@@ -1,93 +1,61 @@
+import discord
+from discord.ext import commands
 import json
 import os
-import random
-import discord
-import asyncio
-import datetime
-from discord import *
-from discord import *
-from discord.abc import *
-from discord.enums import * 
-from discord_buttons_plugin import *
-from discord.ext import *
-from discord.ext.commands import *
-from math import sqrt
-from dice.dice import *
-# import aiofiles
-import discord.client
-import requests
-import random
+
+os.system('clear')
 
 with open('config.json') as r:
   infos = json.load(r)
   prefix = infos['prefix']
   token = infos['token']
+  creator = infos['creator']
 
-Maidchan = commands.Bot(command_prefix=prefix, case_insensitive=True, intents=discord.Intents.all())
-client = discord.Client()
+
+Maidchan = discord.ext.commands.Bot(command_prefix=prefix, case_insensitive=True, intents=discord.Intents.all())
+
 
 @Maidchan.event
 async def on_ready():
-  print('Hi master, I am here!')
-  print(Maidchan.user.name)
-  print(Maidchan.user.id)
-  print('------IkkiArtz------')
+  print(f"{'-'*10}Bot on{'-'*10}")
+  print(f'Hi my master, I am here!')
+  print(f'My name is {Maidchan.user.name}.')
+  print(f'My user id is {Maidchan.user.id}.')
+  print(f"{'-'*10}IkkiArtz{'-'*10}")
 
-@Maidchan.command()
-async def math(ctx, *, calc):
-  if '+' in calc or '-' in calc or '/' in calc or '*' in calc or 'sqrt' in calc or '**':
-    await ctx.send(eval(calc))
-
-@Maidchan.command()
-async def dice(ctx, *, dice):
-  diceImport = diceMain(dice)
-  diceImport.main()
-  await ctx.send(f'{dice}\n{diceImport.rollList} -> {diceImport.rollTotal}')
-
-@Maidchan.command()
-async def say(ctx,*,said):
-  await ctx.send(said)
-  await ctx.message.delete()
-
-@Maidchan.command()
-async def avatar(ctx,*,user:discord.Member=None):
-  if user == None:
-    user = ctx.author
-  urlAvatarUser = user.avatar_url
-  await ctx.send(urlAvatarUser)
-
-@Maidchan.command()
-async def anime(ctx,*,category=None):
-  if category == None:
-    category = random.choice(['waifu','neko','shinobu','megumin','bully','cuddle','cry','hug','awoo','kiss','lick','pat','smug','bonk','yeet','blush','smile','wave','highfive','handhold','nom','bite','glomp','slap','kill','kick','happy','wink','poke','dance','cringe'])
-  r = requests.get(f'https://api.waifu.pics/sfw/{category}')
-  r.encoding = 'ISO-8859-1'
-  r = str(r.text)
-  r = json.loads(str(r))
-  await ctx.send(r['url'])
-
-@Maidchan.command()
-# @commands.is_nsfw()
-async def hentai(ctx,*,category=None):
-  if ctx.channel.is_nsfw() == True:
-    if category == None:
-      category = random.choice(['waifu','neko','trap','blowjob'])
-    r = requests.get(f'https://api.waifu.pics/nsfw/{category}')
-    r.encoding = 'ISO-8859-1'
-    r = str(r.text)
-    r = json.loads(str(r))
-    await ctx.send(r['url'])
+print(f"{'-'*10}Commands Loading{'-'*10}")
+for filename in os.listdir('./commands'):
+  if os.path.isdir(f'./commands/{filename}') == True:
+    print(f'Unable to load dir "{filename}".')
   else:
-    await ctx.send('M-master, wrong channel!')
+      if filename.endswith('.py'):
+        Maidchan.load_extension(f'commands.{filename[:-3]}')
+        print(f'{filename[:-3]} loaded')
+      else:
+        print(f'Unable to load {filename}.')
 
-# @Maidchan.command()
-# async def test(ctx):
-#   channel = ctx.channel
+@Maidchan.command(hidden=True)
+async def load(ctx, *, filename):
+    if str(ctx.author.id) == str(creator):
+        Maidchan.load_extension(f'commands.{filename}')
+        await ctx.send(f'My master, the {filename} commands was loaded')
+    else:
+        await ctx.send('Sorry master, only creator may loaded a module.')
+        
+@Maidchan.command(hidden=True)
+async def unload(ctx, *, filename):
+    if str(ctx.author.id) == str(creator):
+        Maidchan.unload_extension(f'commands.{filename}')
+        await ctx.send(f'My master, the {filename} commands was unloaded')
+    else:
+        await ctx.send('Sorry master, only creator may unloaded a module.')
 
-#   def check(m):
-#       return m.content == 'hello' and m.channel == channel
+@Maidchan.command(hidden=True)
+async def reload(ctx, *, filename):
+    if str(ctx.author.id) == str(creator):
+        Maidchan.reload_extension(f'commands.{filename}')
+        await ctx.send(f'My master, the {filename} commands was reloaded')
+    else:
+        await ctx.send('Sorry master, only creator may reloaded a module.')
 
-#   msg = await client.wait_for('message', check=check)
-#   await channel.send('Hello {.author}!'.format(msg))
-  
 Maidchan.run(token)
