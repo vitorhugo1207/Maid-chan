@@ -60,7 +60,6 @@ async def avatar(ctx,*,user:discord.Member=None):
 async def anime(ctx,*,category=None):
   if category == None:
     category = random.choice(['waifu','neko','shinobu','megumin','bully','cuddle','cry','hug','awoo','kiss','lick','pat','smug','bonk','yeet','blush','smile','wave','highfive','handhold','nom','bite','glomp','slap','kill','kick','happy','wink','poke','dance','cringe'])
-    print(category)
   r = requests.get(f'https://api.waifu.pics/sfw/{category}')
   r.encoding = 'ISO-8859-1'
   r = str(r.text)
@@ -68,14 +67,18 @@ async def anime(ctx,*,category=None):
   await ctx.send(r['url'])
 
 @Maidchan.command()
+# @commands.is_nsfw()
 async def hentai(ctx,*,category=None):
-  if category == None:
-    category = random.choice(['waifu','neko','trap','blowjob'])
-  r = requests.get(f'https://api.waifu.pics/nsfw/{category}')
-  r.encoding = 'ISO-8859-1'
-  r = str(r.text)
-  r = json.loads(str(r))
-  await ctx.send(r['url'])
+  if ctx.channel.is_nsfw() == True:
+    if category == None:
+      category = random.choice(['waifu','neko','trap','blowjob'])
+    r = requests.get(f'https://api.waifu.pics/nsfw/{category}')
+    r.encoding = 'ISO-8859-1'
+    r = str(r.text)
+    r = json.loads(str(r))
+    await ctx.send(r['url'])
+  else:
+    await ctx.send('M-master, wrong channel!')
 
 # @Maidchan.command()
 # async def test(ctx):
