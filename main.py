@@ -1,4 +1,5 @@
 import discord
+from discord import activity
 from discord.ext import commands
 import json
 import os
@@ -14,9 +15,9 @@ with open('config.json') as r:
 
 Maidchan = discord.ext.commands.Bot(command_prefix=prefix, case_insensitive=True, intents=discord.Intents.all())
 
-
 @Maidchan.event
 async def on_ready():
+  await Maidchan.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name='Test'))
   print(f"{'-'*10}Bot on{'-'*10}")
   print(f'Hi my master, I am here!')
   print(f'My name is {Maidchan.user.name}.')
