@@ -36,3 +36,4 @@ class Utilities(commands.Cog):
 
 def setup(Maidchan):
     Maidchan.add_cog(Utilities(Maidchan))
+    
