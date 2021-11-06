@@ -17,6 +17,18 @@ class Pics(commands.Cog):
         r = json.loads(str(r))
         await ctx.send(r['url'])
     
+    @commands.command()
+    # @commands.is_nsfw()
+    async def hentai(self, ctx,*,category=None):
+        if ctx.channel.is_nsfw() == True:
+            if category == None:
+                category = choice(['waifu','neko','trap','blowjob'])
+                r = requests.get(f'https://api.waifu.pics/nsfw/{category}')
+                r = str(r.text)
+                r = json.loads(str(r))
+            await ctx.send(r['url'])
+        else:
+            await ctx.send('M-master, wrong channel!')
 
 def setup(Maidchan):
     Maidchan.add_cog(Pics(Maidchan))
