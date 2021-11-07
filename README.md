@@ -35,7 +35,7 @@
 - [💻 Technologies Used](#Technologies_Used)
 - [2️⃣ Cloning Repository](#Cloning_repository)
 - [📈 Future Plans](#Future_Plans)
-- [🖱️ Commands](#Commands.commands.md)
+- [🖱️ Commands](#commands/README.md)
 - [🎨 Logo Source](#Logo_Source)
 
 <br>
