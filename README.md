@@ -32,11 +32,11 @@
 
 ## 📝 Table of Contents
 
-- [Technologies Used](#Technologies_Used)
-- [Cloning Repository](#Cloning_repository)
-- [Future Plans](#Future_Plans)
-- [Commands](#Commands.commands.md)
-- [Logo Source](#Logo_Source)
+- [💻 Technologies Used](#Technologies_Used)
+- [2️⃣ Cloning Repository](#Cloning_repository)
+- [📈 Future Plans](#Future_Plans)
+- [🖱️ Commands](#Commands.commands.md)
+- [🎨 Logo Source](#Logo_Source)
 
 <br>
 
@@ -49,6 +49,7 @@
 - [Python](https://www.python.org/)
 - [Discord.py](https://github.com/Rapptz/discord.py)
 - [Requests](https://github.com/psf/requests)
+- [Waifu Pics](https://waifu.pics/)
 
 <br>
 
@@ -100,6 +101,6 @@ git clone https://github.com/vitorhugo1207/Maid-chan
 ---
 <!-- -------------------------------------- -->
 
-## 📈 Logo Source <a name="Logo_Source" ></a>
+## 🎨 Logo Source <a name="Logo_Source" ></a>
 
 Artwork: https://www.pixiv.net/en/artworks/87396646
