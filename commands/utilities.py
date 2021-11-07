@@ -27,8 +27,8 @@ class Utilities(commands.Cog):
     async def avatar(self, ctx,*,user:discord.Member=None):
         if user == None:
             user = ctx.author
-            urlAvatarUser = user.avatar_url
-            await ctx.send(urlAvatarUser)
+        urlAvatarUser = user.avatar_url
+        await ctx.send(urlAvatarUser)
     
     @commands.command()
     async def ping(self, ctx): 
