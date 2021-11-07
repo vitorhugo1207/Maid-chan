@@ -94,7 +94,9 @@ git clone https://github.com/vitorhugo1207/Maid-chan
 <!-- -------------------------------------- -->
 
 ## 📈 Future Plans <a name="Future_Plans" ></a>
+<br>
 
+☐ Image Search using some services.
 
 <br>
 
