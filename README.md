@@ -97,6 +97,7 @@ git clone https://github.com/vitorhugo1207/Maid-chan
 <br>
 
 ☐ Image Search using some services.
+☐ Pinterest API
 
 <br>
 
