@@ -35,7 +35,7 @@
 - [💻 Technologies Used](#Technologies_Used)
 - [2️⃣ Cloning Repository](#Cloning_repository)
 - [📈 Future Plans](#Future_Plans)
-- [🖱️ Commands](https://github.com/vitorhugo1207/Maid-chan/tree/main/commands)
+- [🖱️ Commands](/commands/)
 - [🎨 Logo Source](#Logo_Source)
 
 <br>
