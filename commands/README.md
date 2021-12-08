@@ -5,6 +5,7 @@
 
 ## 📝 Table of Contents
 
+- [Home](../)
 - [Pics](#pics)
 - [Recreation](#recreation)
 - [Utilities](#utilities)
@@ -19,7 +20,7 @@ Note: how standard the bot use prefix: ``m!``, but may variable depending server
 ## Pics <a name="pics"></a>
 This type commands return a link image that is open automatically open in own Discord App. <br>
 - Anime <br>
-The command **Anime** use ``API Waifu Pics``, see [technologies used](#Technologies_Used) for more information. This command return **only images sfw**. <br>
+The command **Anime** use **API Waifu Pics**, see [technologies used](#Technologies_Used) for more information. This command return **only images sfw**. <br>
 Sintax example:
 ```
 m!anime
@@ -33,7 +34,7 @@ Arguments list: waifu, neko, shinobu, megumin , bully, cuddle, cry, hug, awoo, k
 <br>
 
 - Hentai <br>
-The command **Hentai** use ``API Waifu Pics``, see [technologies used](#Technologies_Used) for more information. This command may be used **only nsfw chats**.<br>
+The command **Hentai** use **API Waifu Pics**, see [technologies used](#Technologies_Used) for more information. This command may be used **only nsfw chats**.<br>
 Sintax example:
 ```
 m!hentai
@@ -46,11 +47,18 @@ Arguments list: waifu, neko, trap, blowjob
 
 <br>
 
+- Fox <br>
+The command **Fox** use **Random Fox API**, see [technologies used](#Technologies_Used) for more information.
+Sintax example:
+```
+m!fox
+```
+
 ---
 ## Recreation <a name="recreation"></a>
 - Dice <br>
 
-This command is part of ``RollDice Project``, see [technologies used](#Technologies_Used) for more information. The rolldice can roll dice at the interval that you choose, times as you want and sum bonus. And return list of rolls (with bonus if add) and total roll.<br>
+This command is part of **RollDice Project**, see [technologies used](#Technologies_Used) for more information. The rolldice can roll dice at the interval that you choose, times as you want and sum bonus. And return list of rolls (with bonus if add) and total roll.<br>
 Sintax example:
 ```
 m!dice 2d30+4
