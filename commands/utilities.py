@@ -5,7 +5,6 @@ from discord.ext.commands import bot
 import requests
 import json
 import time
-
 from main import Maidchan
 
 class Utilities(commands.Cog):
@@ -34,6 +33,12 @@ class Utilities(commands.Cog):
     async def ping(self, ctx): 
         await ctx.send(f'Pong! {round(self.Maidchan.latency * 1000)}ms.')
 
+    # @commands.command()
+    # async def animesearch(self, ctx, *, img):
+    #     img = requests.get(f'https://api.trace.moe/search?url={img}').text
+    #     img = json.loads(str(img))
+    #     print(img['result']['filename'])
+    #     # await ctx.send(img[])
+
 def setup(Maidchan):
     Maidchan.add_cog(Utilities(Maidchan))
-    

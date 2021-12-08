@@ -35,7 +35,7 @@
 - [💻 Technologies Used](#Technologies_Used)
 - [2️⃣ Cloning Repository](#Cloning_repository)
 - [📈 Future Plans](#Future_Plans)
-- [🖱️ Commands](#commands/README.md)
+- [🖱️ Commands](https://github.com/vitorhugo1207/Maid-chan/tree/main/commands)
 - [🎨 Logo Source](#Logo_Source)
 
 <br>
@@ -50,6 +50,7 @@
 - [Discord.py](https://github.com/Rapptz/discord.py)
 - [Requests](https://github.com/psf/requests)
 - [Waifu Pics](https://waifu.pics/)
+- [Random Fox](https://randomfox.ca/)
 
 <br>
 

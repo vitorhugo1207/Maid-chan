@@ -23,12 +23,23 @@ class Pics(commands.Cog):
         if ctx.channel.is_nsfw() == True:
             if category == None:
                 category = choice(['waifu','neko','trap','blowjob'])
-            r = requests.get(f'https://api.waifu.pics/nsfw/{category}')
-            r = str(r.text)
-            r = json.loads(str(r))
+            for x in range(3):
+                r = requests.get(f'https://api.waifu.pics/nsfw/{category}')
+                r = str(r.text)
+                r = json.loads(str(r))
             await ctx.send(r['url'])
         else:
             await ctx.send('M-master, wrong channel!')
+    
+    @commands.command()
+    async def fox(self, ctx):
+        url = "https://randomfox.ca/floof/"
+
+        r = requests.get(url)
+        r = str(r.text)
+        r = json.loads(str(r))
+
+        await ctx.send(r['image'])
 
 def setup(Maidchan):
     Maidchan.add_cog(Pics(Maidchan))

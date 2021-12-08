@@ -4,7 +4,7 @@ from discord.ext import commands
 import json
 import os
 
-os.system('clear')
+# os.system('clear')
 
 with open('config.json') as r:
   infos = json.load(r)
