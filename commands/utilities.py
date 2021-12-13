@@ -6,6 +6,7 @@ import requests
 import json
 import time
 from main import Maidchan
+import datetime
 
 class Utilities(commands.Cog):
     def __init__(self, Maidchan):
@@ -33,12 +34,40 @@ class Utilities(commands.Cog):
     async def ping(self, ctx): 
         await ctx.send(f'Pong! {round(self.Maidchan.latency * 1000)}ms.')
 
-    # @commands.command()
-    # async def animesearch(self, ctx, *, img):
-    #     img = requests.get(f'https://api.trace.moe/search?url={img}').text
-    #     img = json.loads(str(img))
-    #     print(img['result']['filename'])
-    #     # await ctx.send(img[])
+    @commands.command()
+    async def animesearch(self, ctx, *, img):
+        # Search
+        img = requests.get(f'https://api.trace.moe/search?cutBorders&url={img}')
+        img = str(img.text)
+        img = json.loads(str(img))
+
+        # Get anime info
+        anilistQuery = '''
+        query ($id: Int) {
+        Media (id: $id, type: ANIME) {
+            id
+            title {
+            romaji
+            english
+            native
+            }
+        }
+        }
+        '''
+        anilistPOST = requests.post("https://graphql.anilist.co/", json={'query': anilistQuery, 'variables': {'id': img['result'][1]['anilist']}})
+        anilistPOST = str(anilistPOST.text)
+        anilistPOST = json.loads(str(anilistPOST))
+
+        # Show data
+        await ctx.send(f"""
+Similarity: {(str(float((img['result'][1]['similarity'])*100)))[:5]}%
+
+Anilist: https://anilist.co/anime/{img['result'][1]['anilist']}
+Tittle romaji: {anilistPOST['data']['Media']['title']['romaji']}
+Tittle romaji: {anilistPOST['data']['Media']['title']['english']}
+Episode: {img['result'][1]['episode']}
+Time between: {str(datetime.timedelta(seconds=(img['result'][1]['from'])))[:7]} and {str(datetime.timedelta(seconds=(img['result'][1]['to'])))[:7]}
+        """)
 
 def setup(Maidchan):
     Maidchan.add_cog(Utilities(Maidchan))
