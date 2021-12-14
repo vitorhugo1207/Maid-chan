@@ -9,6 +9,7 @@
 - [Pics](#pics)
 - [Recreation](#recreation)
 - [Utilities](#utilities)
+- [Music](#music)
 
 <br>
 
@@ -111,4 +112,77 @@ m!ping
 Return example:
 ```
 Pong! 38ms.
+```
+
+<br>
+
+- Scene Anime Search <br>
+This command will search for anime using a Scene (gif, image, vídeo). This command use **Trace.moe API**, see [technologies used](#Technologies_Used) for more information. By limitations of API file size is limited to 10MB and the recommended resolution is 640 x 360px.
+Sintax example:
+```
+m!animesearch https://images.plurk.com/32B15UXxymfSMwKGTObY5e.jpg
+```
+Return example:
+```
+Similarity: 97.35
+
+Anilist: https://anilist.co/anime/21034
+Tittle romaji: Gochuumon wa Usagi desu ka??
+Tittle romaji: Is the Order a Rabbit?? Season 2
+Episode: 1
+Time between: 0:04:48 and 0:04:52
+```
+
+## Music <a name="music"></a>
+This command play some video from Youtube in voice channel. <br>
+
+- Join <br>
+Join in voice channel you are in.
+Sintax example:
+```
+m!join
+```
+
+<br>
+
+- Leave <br>
+Leave of voice channel.
+Sintax example:
+```
+m!leave
+```
+
+<br>
+
+- Stop <br>
+Stop play music.
+Sintax example:
+```
+m!stop
+```
+
+<br>
+
+- Play <br>
+Play some video passing a link.
+Sintax example:
+```
+m!play https://www.youtube.com/watch?v=9lNZ_Rnr7Jc
+```
+
+<br>
+
+- Pause <br>
+Pause Music.
+Sintax example:
+```
+m!pause
+```
+
+<br>
+
+- Resume <br>
+Resume Music.
+```
+m!resume
 ```
