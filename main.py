@@ -3,6 +3,7 @@ from discord import activity
 from discord.ext import commands
 import json
 import os
+import time
 
 os.system('clear')
 
@@ -17,12 +18,12 @@ Maidchan = discord.ext.commands.Bot(command_prefix=prefix, case_insensitive=True
 
 @Maidchan.event
 async def on_ready():
-  await Maidchan.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name='Test'))
   print(f"{'-'*10}Bot on{'-'*10}")
   print(f'Hi my master, I am here!')
   print(f'My name is {Maidchan.user.name}.')
   print(f'My user id is {Maidchan.user.id}.')
   print(f"{'-'*10}IkkiArtz{'-'*10}")
+  await Maidchan.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name='Master!'))
 
 print(f"{'-'*10}Commands Loading{'-'*10}")
 for filename in os.listdir('./commands'):
