@@ -24,7 +24,7 @@
 
 ---
 
-<p align="center"> Maid-Chan is a bot for Discord build in Maid-chan is build in Discord.py (more detail below), has purpose help in the administration of the server, recreation and several utilities.
+<p align="center"> Maid-Chan is a bot for Discord build in Maid-chan is build in Discord.py (more detail below), has purpose help in the administration of the server, recreation and several utilities. Maid-Chan is also a bot that respect your privicy, so Maid-Chan doesn't collect information unnecessary information. 
     <br> 
 </p>
 
@@ -51,6 +51,9 @@
 - [Requests](https://github.com/psf/requests)
 - [Waifu Pics](https://waifu.pics/)
 - [Random Fox](https://randomfox.ca/)
+- [YouTube_dl](https://github.com/ytdl-org/youtube-dl)
+- [AniList API V2 GraphQL](https://github.com/AniList/ApiV2-GraphQL-Docs)
+- [trace.moe](https://github.com/soruly/trace.moe)
 
 <br>
 
@@ -67,17 +70,30 @@ for linux users probaly already is installed. If not search in store of your dis
 <br>
 
 - Installing [Discord.py](https://pypi.org/project/discord.py/)
-```
 # Linux/macOS
+```
 python3 -m pip install -U discord.py
+```
+```
+python3 -m pip install -U discord.py[voice]
+```
 
 # Windows
+```
 py -3 -m pip install -U discord.py
+```
+```
+python3 -m pip install -U discord.py[voice]
 ```
 
 - Installing [Requests](https://pypi.org/project/requests/)
 ``` 
 python -m pip install requests
+```
+
+-Installing [YouTube_dl](https://github.com/ytdl-org/youtube-dl)
+``` 
+pip install youtube_dl
 ```
 
 - Installing [Git](https://git-scm.com/) <br>
