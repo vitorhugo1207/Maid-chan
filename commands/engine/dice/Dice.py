@@ -25,7 +25,7 @@ class Dice:
     if self.bonus:
       bonus_op = self.dice_string.split('d')[1][0]
       self.total = {'+': self.total + self.bonus, '-': self.total - self.bonus, 
-                         '*': self.total * self.bonus, '/': self.total / self.bonus}[bonus_op]
+                    '*': self.total * self.bonus, '/': self.total / self.bonus}[bonus_op]
     return self.total
 
 dice = Dice('2d20+5')
