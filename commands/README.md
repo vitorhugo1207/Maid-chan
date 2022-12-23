@@ -94,7 +94,7 @@ Operations supported: ``+`` ``-``, ``*``, ``/``, ``**`` and ``sqrt``.
 <br>
 
 - Avatar <br>
-This type commands return a link avatar image that is open automatically open in own Discord App. <br>
+This command returns a link avatar image <br>
 Syntax example:
 ```
 m!avatar @Maid-chan#0233
