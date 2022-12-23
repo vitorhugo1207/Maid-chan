@@ -20,7 +20,7 @@ class Pics(commands.Cog):
     else:
       categories = ['waifu', 'neko', 'trap', 'blowjob']
     if ctx.channel.is_nsfw() == True:
-      return categories[random.randint(0, len(categories) - 1)]
+      return random.choice(categories)
     else:
       await ctx.channel.send('M-master, wrong channel!')
       return None
