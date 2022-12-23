@@ -1,6 +1,5 @@
 import discord
 import requests
-import json
 import random
 
 class Pics(commands.Cog):
@@ -10,9 +9,8 @@ class Pics(commands.Cog):
 
   async def send_pic(self, ctx, url):
     try:
-      r = self.session.get(url)
-      r = r.json()
-      await ctx.channel.send(r['url'])
+      data = self.session.get(url).json()
+      await ctx.channel.send(data['url'])
     except Exception as e:
       await ctx.channel.send(f'An error occurred: {e}')
 
@@ -21,7 +19,6 @@ class Pics(commands.Cog):
       categories = ['waifu', 'neko', 'shinobu', 'megumin', 'bully', 'cuddle', 'cry', 'hug', 'awoo', 'kiss', 'lick', 'pat', 'smug', 'bonk', 'yeet', 'blush', 'smile', 'wave', 'highfive', 'handhold', 'nom', 'bite', 'glomp', 'slap', 'kill', 'kick', 'happy', 'wink', 'poke', 'dance', 'cringe']
     else:
       categories = ['waifu', 'neko', 'trap', 'blowjob']
-
     if ctx.channel.is_nsfw() == True:
       return categories[random.randint(0, len(categories) - 1)]
     else:
