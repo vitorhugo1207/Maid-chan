@@ -13,13 +13,13 @@
 
 <br>
 
-Note: how standard the bot use prefix: ``m!``, but may variable depending server config. Mention the bot for show prefix standard of the server. 
+Note: The bot use prefix: ``m!``, but may vary depending on server config. Mention the bot to show bot's prefix of the server. 
 
 ---
 <!-- ---------------------------------------------- -->
 
 ## Pics <a name="pics"></a>
-This type commands return a link image that is open automatically open in own Discord App. <br>
+This commands returns an embed link image to discord. <br>
 - Anime <br>
 The command **Anime** use **API Waifu Pics**, see [technologies used](#Technologies_Used) for more information. This command return **only images sfw**. <br>
 Syntax example:
@@ -36,7 +36,7 @@ Arguments list: waifu, neko, shinobu, megumin , bully, cuddle, cry, hug, awoo, k
 
 - Hentai <br>
 The command **Hentai** use **API Waifu Pics**, see [technologies used](#Technologies_Used) for more information. This command may be used **only nsfw chats**.<br>
-Sintax example:
+Syntax example:
 ```
 m!hentai
 ```
@@ -60,11 +60,11 @@ m!fox
 - Dice <br>
 
 This command is part of **RollDice Project**, see [technologies used](#Technologies_Used) for more information. The rolldice can roll dice at the interval that you choose, times as you want and sum bonus. And return list of rolls (with bonus if add) and total roll.<br>
-Sintax example:
+Syntax example:
 ```
 m!dice 2d30+4
 ``` 
-"2" is amount of times the dice will be rolled, "30" is the max number of dice and "+4" is the bonus will be sum in total roll. If this command for used without amount of time, it will roll just one time; without "30" it will return error; without "+4", obviously, it will return without any bonus, the bonus supported is ``+`` ``-``, ``*`` or ``/``. <br>
+"2" is amount of times the dice will be rolled, "30" is the max number of dice and "+4" is the bonus will be sum in total roll. If this command is used without a specified amount of time, it will roll just one time; without "30" it will return error; without "+4", obviously, it will return without any bonus, the bonus supported is ``+`` ``-``, ``*`` or ``/``. <br>
 Return example:
 ```
 2d30+4
@@ -76,7 +76,7 @@ Return example:
 ---
 ## Utilities <a name="utilities"></a>
 - Say <br>
-This command will return that you tell for repeat and will delete your mensage. <br>
+This command will return that you tell for repeat and will delete your message. <br>
 Syntax example:
 ```
 m!say Hello, world!
@@ -99,7 +99,7 @@ Syntax example:
 ```
 m!avatar @Maid-chan#0233
 ```
-If no pass **user id** or **user name**, it will return your avatar image.
+If not passing **user id** or **user name**, it will return your avatar image.
 
 <br>
 
@@ -183,6 +183,7 @@ m!pause
 
 - Resume <br>
 Resume Music.
+Syntax example:
 ```
 m!resume
 ```
