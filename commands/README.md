@@ -22,11 +22,11 @@ Note: how standard the bot use prefix: ``m!``, but may variable depending server
 This type commands return a link image that is open automatically open in own Discord App. <br>
 - Anime <br>
 The command **Anime** use **API Waifu Pics**, see [technologies used](#Technologies_Used) for more information. This command return **only images sfw**. <br>
-Sintax example:
+Syntax example:
 ```
 m!anime
 ``` 
-You also can pass one argument for specify the anime type, sintax example:
+You also can pass one argument for specify the anime type, syntax example:
 ```
 m!anime waifu
 ```
@@ -40,7 +40,7 @@ Sintax example:
 ```
 m!hentai
 ```
-You also can pass one argument for specify the hentai type, sintax example:
+You also can pass one argument for specify the hentai type, syntax example:
 ```
 m!hentai neko
 ```
@@ -50,7 +50,7 @@ Arguments list: waifu, neko, trap, blowjob
 
 - Fox <br>
 The command **Fox** use **Random Fox API**, see [technologies used](#Technologies_Used) for more information.
-Sintax example:
+Syntax example:
 ```
 m!fox
 ```
@@ -77,7 +77,7 @@ Return example:
 ## Utilities <a name="utilities"></a>
 - Say <br>
 This command will return that you tell for repeat and will delete your mensage. <br>
-Sintax example:
+Syntax example:
 ```
 m!say Hello, world!
 ```
@@ -85,7 +85,7 @@ m!say Hello, world!
 
 - Math <br>
 This command do math operations. <br>
-Sintax example:
+Syntax example:
 ```
 m!math (2+2)*4
 ```
@@ -95,7 +95,7 @@ Operations supported: ``+`` ``-``, ``*``, ``/``, ``**`` and ``sqrt``.
 
 - Avatar <br>
 This type commands return a link avatar image that is open automatically open in own Discord App. <br>
-Sintax example:
+Syntax example:
 ```
 m!avatar @Maid-chan#0233
 ```
@@ -105,7 +105,7 @@ If no pass **user id** or **user name**, it will return your avatar image.
 
 - Ping <br>
 This command will return ms response.
-Sintax example:
+Syntax example:
 ```
 m!ping
 ```
@@ -118,7 +118,7 @@ Pong! 38ms.
 
 - Scene Anime Search <br>
 This command will search for anime using a Scene (gif, image, vídeo). This command use **Trace.moe API**, see [technologies used](#Technologies_Used) for more information. By limitations of API file size is limited to 10MB and the recommended resolution is 640 x 360px.
-Sintax example:
+Syntax example:
 ```
 m!animesearch https://images.plurk.com/32B15UXxymfSMwKGTObY5e.jpg
 ```
@@ -138,7 +138,7 @@ This command play some video from Youtube in voice channel. <br>
 
 - Join <br>
 Join in voice channel you are in.
-Sintax example:
+Syntax example:
 ```
 m!join
 ```
@@ -147,7 +147,7 @@ m!join
 
 - Leave <br>
 Leave of voice channel.
-Sintax example:
+Syntax example:
 ```
 m!leave
 ```
@@ -156,7 +156,7 @@ m!leave
 
 - Stop <br>
 Stop play music.
-Sintax example:
+Syntax example:
 ```
 m!stop
 ```
@@ -165,7 +165,7 @@ m!stop
 
 - Play <br>
 Play some video passing a link.
-Sintax example:
+Syntax example:
 ```
 m!play https://www.youtube.com/watch?v=9lNZ_Rnr7Jc
 ```
@@ -174,7 +174,7 @@ m!play https://www.youtube.com/watch?v=9lNZ_Rnr7Jc
 
 - Pause <br>
 Pause Music.
-Sintax example:
+Syntax example:
 ```
 m!pause
 ```
