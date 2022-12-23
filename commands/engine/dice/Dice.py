@@ -1,129 +1,32 @@
-from random import randrange
-from datetime import datetime
+import random
 
-# This if other project of the IkkiArtz (vitorhugo1207).
-# https://github.com/vitorhugo1207/RollDice
+class Dice:
+    def __init__(self, dice_string: str):
+        self.dice_string = dice_string
+        self.rolls = []
+        self.bonus = None
+        self.total = None
+        self.parse_dice_string()
 
-class diceMain():
-    def __init__(self, dice):
-        self.dice = dice
-        self.diceT = None
-        self.diceA = None
-        self.diceMin = 1 # The minimum for start scroll dice
-        self.rollList = []
-        self.rollBonus = None
-        self.rollTotal = None
+    def parse_dice_string(self):
+        # Split dice string into rolls and bonus
+        if '+' in self.dice_string or '-' in self.dice_string or '*' in self.dice_string or '/' in self.dice_string:
+            self.bonus = int(self.dice_string.split('d')[1])
+            self.dice_string = self.dice_string.split('d')[0]
+        self.rolls = [int(x) for x in self.dice_string.split('d')]
+        if len(self.rolls) == 1:
+            self.rolls.append(self.rolls[0])
+            self.rolls[0] = 1
 
-    def getScrollTimes(self):
-        '''Dice scroll times'''
-        
-        diceFindD = self.dice.find('d')
-        self.diceA = self.dice[:diceFindD].replace('d', '') # Extraction time of dice roll and remove "d"
-        if self.diceA == '':
-            self.diceA = 1
-        self.diceT = self.dice[diceFindD:].replace('d', '') # Extraction interval of draw
+    def roll(self):
+        # Roll the dice and apply bonus
+        rolls = [random.randint(1, self.rolls[1]) for _ in range(self.rolls[0])]
+        self.total = sum(rolls)
+        if self.bonus:
+            bonus_op = self.dice_string.split('d')[1][0]
+            self.total = {'+': self.total + self.bonus, '-': self.total - self.bonus, 
+                         '*': self.total * self.bonus, '/': self.total / self.bonus}[bonus_op]
+        return self.total
 
-    def bonus(self):
-        '''Bonus extraction'''
-
-        if '+' in self.dice:
-            diceFindBonus = self.dice.find('+')
-            self.rollBonus = self.dice[diceFindBonus:].replace('+', '')
-            self.diceT = self.diceT[:diceFindBonus - 1].replace('+', '')
-            try:
-                self.rollBonus = int(self.rollBonus)
-            except ValueError:
-                dice = self.dice[:diceFindBonus]
-
-        elif '-' in self.dice:
-            diceFindBonus = self.dice.find('-')
-            self.rollBonus = self.dice[diceFindBonus:].replace('-', '')
-            self.diceT = self.diceT[:diceFindBonus - 1].replace('-', '')
-            try:
-                self.rollBonus = int(self.rollBonus)
-            except ValueError:
-                dice = self.dice[:diceFindBonus]
-
-        elif '*' in self.dice:
-            diceFindBonus = self.dice.find('*')
-            self.rollBonus = self.dice[diceFindBonus:].replace('*', '')
-            self.diceT = self.diceT[:diceFindBonus - 1].replace('*', '')
-            try:
-                self.rollBonus = int(self.rollBonus)
-            except ValueError:
-                dice = self.dice[:diceFindBonus]
-
-        elif '/' in self.dice:
-            diceFindBonus = self.dice.find('/')
-            self.rollBonus = self.dice[diceFindBonus:].replace('/', '')
-            self.diceT = self.diceT[:diceFindBonus - 1].replace('/', '')
-            try:
-                self.rollBonus = int(self.rollBonus)
-            except ValueError:
-                dice = self.dice[:diceFindBonus]
-        
-        elif self.diceT == '0': # If not have 'd' in dice
-            self.diceA = 1
-            self.diceT = self.dice
-
-    def sumDice(self):
-        '''Sum List of dice roll and roll bonus'''
-
-        if '+' in self.dice:
-            self.rollTotal = sum(self.rollList) + self.rollBonus
-            self.rollList.append(f'+{self.rollBonus}')
-            self.rollBonus = ''
-
-        elif '-' in self.dice:
-            self.rollTotal = sum(self.rollList) - self.rollBonus
-            self.rollList.append(f'-{self.rollBonus}')
-            self.rollBonus = ''
-
-        elif '*' in self.dice:
-            self.rollTotal = sum(self.rollList) * self.rollBonus
-            self.rollList.append(f'*{self.rollBonus}')
-            self.rollBonus = ''
-
-        elif '/' in self.dice:
-            self.rollTotal = sum(self.rollList) / self.rollBonus
-            self.rollList.append(f'/{self.rollBonus}')
-            self.rollBonus = ''
-
-        else:
-            self.rollTotal = sum(self.rollList)
-
-    def dataShow(self):
-        '''Data show'''
-        # timenow = datetime.now() # Acquiring time of scrolling dice
-        # time = timenow.strftime('%d/%m/%Y at %H:%M:%S') # Formatting time of scrolling dice
-        # print(time) # Show time of scrolling dice
-
-        # if len(self.rollList) > 1: # If characters of self.rollList (maximum limit of scroll dice) > one scroll dice
-        #     print(f'List of dice roll: {", ".join(map(str, self.rollList))}') # Show list of scroll dice and bonus
-        # print(f'Total of dice roll: {self.rollTotal}') # Show total of scroll dice and bonus
-    
-    def diceRoll(self):
-        try:
-            # __Str for Int__
-            self.diceT = int(self.diceT) + 1 # Counting with the 0
-            self.diceA = int(self.diceA)
-        except:
-            print('I am sorry, did not understood. Type "help" for instructions.')
-            dice = ''
-            return
-
-        # __Loop of scroll dice time__
-        try:
-            for x in range(self.diceA):
-                self.rollList.append(randrange(self.diceMin, self.diceT))  # self.diceMin (Minimum) between self.diceT (Total)
-        except:
-            print('I am sorry, did not understood. Type "help" for instructions.')
-            dice = ''
-            return
-
-    def main(self):
-        self.getScrollTimes()
-        self.bonus()
-        self.diceRoll()
-        self.sumDice()
-        self.dataShow()
+dice = Dice('2d20+5')
+print(dice.roll())
