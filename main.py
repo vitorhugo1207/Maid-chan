@@ -10,7 +10,7 @@ def clear_console():
   elif sys.platform == "win32":
     subprocess.run("cls")
 
-Maidchan = commands.Bot(command_prefix=config.prefix, case_insensitive=True, intents=discord.Intents.all())Maidchan = commands.Bot(command_prefix=config.prefix, case_insensitive=True, intents=discord.Intents.all())
+Maidchan = commands.Bot(command_prefix=config.prefix, case_insensitive=True, intents=discord.Intents.all())
 
 @Maidchan.event
 async def on_ready():
