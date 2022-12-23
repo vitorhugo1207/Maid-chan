@@ -32,8 +32,7 @@ class Utilities(commands.Cog):
   async def animesearch(self, ctx, *, img):
     # Search
     img = requests.get(f'https://api.trace.moe/search?cutBorders&url={img}')
-    img = str(img.text)
-    img = json.loads(str(img))
+    img = json.loads(img.text)
    # Get anime info
     anilistQuery = '''
       query ($id: Int) {
