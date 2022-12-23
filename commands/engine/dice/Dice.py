@@ -13,10 +13,10 @@ class Dice:
     if '+' in self.dice_string or '-' in self.dice_string or '*' in self.dice_string or '/' in self.dice_string:
       self.bonus = int(self.dice_string.split('d')[1])
       self.dice_string = self.dice_string.split('d')[0]
-     self.rolls = [int(x) for x in self.dice_string.split('d')]
-     if len(self.rolls) == 1:
-       self.rolls.append(self.rolls[0])
-       self.rolls[0] = 1
+    self.rolls = [int(x) for x in self.dice_string.split('d')]
+    if len(self.rolls) == 1:
+      self.rolls.append(self.rolls[0])
+      self.rolls[0] = 1
 
   def roll(self):
     # Roll the dice and apply bonus
