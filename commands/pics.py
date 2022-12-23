@@ -11,8 +11,8 @@ class Pics(commands.Cog):
     try:
       data = self.session.get(url).json()
       await ctx.channel.send(data['url'])
-    except Exception as e:
-      await ctx.channel.send(f'An error occurred: {e}')
+    except Exception as err:
+      await ctx.channel.send(f'Master, an error occurred: {err}')
 
   async def get_category(self, ctx, sfw=True):
     if sfw:
