@@ -66,7 +66,7 @@ If you for clone my project, please, if possible give credits for me and don't f
 - Python <br>
 
 Download Python: https://www.python.org/downloads/ <br>
-for linux users probaly already is installed. If not search in store of your distro linux.
+For linux users it's probably already installed. If not figure it out yourself nerds.
 <br>
 
 - Installing [Discord.py](https://pypi.org/project/discord.py/)
