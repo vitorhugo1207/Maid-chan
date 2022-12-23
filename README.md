@@ -24,7 +24,7 @@
 
 ---
 
-<p align="center"> Maid-Chan is a bot for Discord build in Maid-chan is build in Discord.py (more detail below), has purpose help in the administration of the server, recreation and several utilities. Maid-Chan is also a bot that respect your privicy, so Maid-Chan doesn't collect information unnecessary information. 
+<p align="center"> Maid-Chan is a bot for Discord built with Discord.py. Its purpose is to help with the administration of servers and provide various utilities for recreation. Maid-Chan is also a privacy-respecting bot, and does not collect unnecessary information.
     <br> 
 </p>
 
