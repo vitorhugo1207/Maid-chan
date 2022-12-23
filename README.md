@@ -61,7 +61,7 @@
 <!-- -------------------------------------- -->
 
 ## 2️⃣ Cloning Repository <a name="Cloning_repository" ></a>
-If you for clone my project, please, if possible give credits for me and don't forget read the [License](https://github.com/vitorhugo1207/Maid-chan/blob/main/LICENSE).
+If you clone my project, please, if possible give credits for me and don't forget read the [License](https://github.com/vitorhugo1207/Maid-chan/blob/main/LICENSE).
 
 - Python <br>
 
