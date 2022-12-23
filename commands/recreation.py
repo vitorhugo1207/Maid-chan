@@ -12,6 +12,5 @@ class Recreation(commands.Cog):
     diceImport.main()
     await ctx.send(f'{dice}\n{diceImport.rollList} -> {diceImport.rollTotal}')
 
-
 async def setup(Maidchan):
   await Maidchan.add_cog(Recreation(Maidchan))
