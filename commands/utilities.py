@@ -68,7 +68,7 @@ Time between: {str(datetime.timedelta(seconds=(img['result'][1]['from'])))[:7]} 
       }
     res = requests.post(url, json=input)
     output = json.loads(res.text)
-    await ctx.send(f"Detected languege: {output['data']['translations'][0]['detectedSourceLanguage']} \nTranslation: {output['data']['translations'][0]['translatedText']}")
+    await ctx.send(f"Detected language: {output['data']['translations'][0]['detectedSourceLanguage']} \nTranslation: {output['data']['translations'][0]['translatedText']}")
 
 async def setup(Maidchan):
     await Maidchan.add_cog(Utilities(Maidchan))
