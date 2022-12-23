@@ -13,7 +13,7 @@
 
 <br>
 
-Note: The bot use prefix: ``m!``, but may vary depending on server config. Mention the bot to show bot's prefix of the server. 
+Note: The bot default prefix: ``m!``, but may vary depending on server config. Mention the bot to show bot's prefix of the server. 
 
 ---
 <!-- ---------------------------------------------- -->
