@@ -7,6 +7,9 @@ import json
 import time
 # from main import Maidchan
 import datetime
+from datetime import date
+import time
+from bs4 import BeautifulSoup
 
 class Utilities(commands.Cog):
     def __init__(self, Maidchan):

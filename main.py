@@ -1,12 +1,9 @@
 from http import client
-import imp
-from pydoc import cli
 import discord
 from discord import activity
 from discord.ext import commands
 import json
 import os
-import time
 import asyncio
 from sys import platform
 
